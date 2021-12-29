@@ -19,7 +19,7 @@ const taskController = {
     app.get(
       "/api/task/pendings",
       authModule.authenticateTokenMiddleware,
-      taskController.getDepartmentPendingTasks
+      taskController.getChorePendingTasks
     );
     app.get(
       "/api/task/:taskId",
@@ -63,10 +63,8 @@ const taskController = {
     const myTasks = taskRepository.getUsersTasks(req.user.userId);
     res.status(200).json({ code: "myTasksSuccess", payload: myTasks });
   },
-  getDepartmentPendingTasks: function (req, res) {
-    const pendingTasks = taskRepository.getDepartmentPendingTasks(
-      req.user.department
-    );
+  getChorePendingTasks: function (req, res) {
+    const pendingTasks = taskRepository.getChorePendingTasks(req.user.chore);
     res
       .status(200)
       .json({ code: "pendingTasksSuccess", payload: pendingTasks });
@@ -102,7 +100,7 @@ const taskController = {
       title: requestData.title,
       description: requestData.description,
       user: { id: req.user.userId, name: req.user.givenName },
-      assignedDepartment: requestData.assignedDepartment,
+      assignedChores: requestData.assignedChores,
       status: taskStatus.Pending,
       logs: [],
     };
@@ -168,10 +166,10 @@ const taskController = {
 
     taskValidationService.taskMustBeExist(res, matchedTask);
     taskValidationService.statusMustBePending(res, matchedTask);
-    taskValidationService.assignedDepartmentMustBeCurrentUserDepartment(
+    taskValidationService.assignedChoreMustBeCurrentUserChore(
       res,
       matchedTask,
-      req.user.department
+      req.user.chore
     );
 
     matchedTask.status = taskStatus.Completed;
@@ -191,10 +189,10 @@ const taskController = {
 
     taskValidationService.taskMustBeExist(res, matchedTask);
     taskValidationService.statusMustBePending(res, matchedTask);
-    taskValidationService.assignedDepartmentMustBeCurrentUserDepartment(
+    taskValidationService.assignedChoreMustBeCurrentUserChore(
       res,
       matchedTask,
-      req.user.department
+      req.user.chore
     );
 
     matchedTask.status = taskStatus.Rejected;

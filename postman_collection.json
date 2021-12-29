@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "ed2dad6a-34ac-4c89-ba71-4ebbf7591f0d",
-		"name": "Crosstech_Frontend_Challenge",
+		"name": "Chorzy API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\":\"mary@company.com\"\n}",
+							"raw": "{\n    \"email\":\"ethan@hotmail.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -267,7 +267,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\":\"Write Code\",\n    \"description\":\"Write appropriate codes for solving this problem\",\n    \"assignedDepartment\": 2\n}",
+							"raw": "{\n    \"title\":\"Write Code\",\n    \"description\":\"Write appropriate codes for solving this problem\",\n    \"assignedChores\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"

@@ -36,14 +36,14 @@ const authController = {
     const jwtToken = authModule.generateJWT(
       matchedUser.id,
       matchedUser.name,
-      matchedUser.department
+      matchedUser.chore
     );
 
     var userData = {
       id: matchedUser.id,
       name: matchedUser.name,
       email: matchedUser.email,
-      department: matchedUser.department,
+      chore: matchedUser.chore,
       jwtToken: jwtToken,
     };
 

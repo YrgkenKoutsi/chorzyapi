@@ -2,17 +2,17 @@ const userRepository = {
   users: [
     {
       id: 1001,
-      name: "Mary Glenn",
-      title: "HR Specialist",
-      email: "mary@company.com",
-      department: 1,
+      name: "Ethan Lee",
+      title: "Adult",
+      email: "ethan@hotmail.com",
+      chore: 1,
     },
     {
       id: 2002,
-      name: "John Doe",
-      title: "Sales Manager",
-      email: "john@company.com",
-      department: 2,
+      name: "Yrgken Koutsi",
+      title: "Adult",
+      email: "yrgken@hotmail.com",
+      chore: 2,
     },
   ],
   getAll: () => {

@@ -20,5 +20,9 @@
     "mocha": "^3.4.2",
     "nodemon": "^2.0.7",
     "supertest": "^3.0.0"
+  },
+  "yarn.build": {
+    "input":"app",
+    "output":"dist"
   }
 }

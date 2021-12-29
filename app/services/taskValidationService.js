@@ -27,17 +27,13 @@ const taskValidationService = {
       throw "Task Validation Error: Task status must be Pending (1)";
     }
   },
-  assignedDepartmentMustBeCurrentUserDepartment: (
-    res,
-    task,
-    currentUserDepartment
-  ) => {
-    if (task.assignedDepartment != currentUserDepartment) {
+  assignedChoreMustBeCurrentUserChore: (res, task, currentUserChore) => {
+    if (task.assignedChores != currentUserChore) {
       res.status(403).json({
         code: "validationError",
-        message: "Current user must be employe of task's assigned department",
+        message: "Current user must be employe of task's assigned chore",
       });
-      throw "Task Validation Error: Current user must be employe of task's assigned department";
+      throw "Task Validation Error: Current user must be employe of task's assigned chore";
     }
   },
   titleAndDescriptionMustBeFilled: (res, title, description) => {
